@@ -1,6 +1,6 @@
 // AppDelegate.m
 //
-// Copyright (c) 2014 Mattt Thompson (http://mattt.me/)
+// Copyright (c) 2014 – 2019 Mattt (http://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@
 #import "AnimatedGIFImageSerialization.h"
 
 @implementation AppDelegate
+@synthesize window;
 
 - (BOOL)application:(__unused UIApplication *)application
 didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions
@@ -35,7 +36,7 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *)launchOptions
     self.window.rootViewController = viewController;
 
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:viewController.view.bounds];
-    imageView.contentMode = UIViewContentModeCenter;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.image = [UIImage imageNamed:@"animated.gif"];
     [viewController.view addSubview:imageView];
